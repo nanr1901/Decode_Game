@@ -35,7 +35,7 @@ for (let i = 0; i < 13; i++) {
 for (let i = 0; i < 13; i++) {
     const div = document.createElement('div');
     const image=document.createElement('img');
-    image.src='Images/'+String.fromCharCode(65 + i)+'.png';
+    image.src='/Images/'+String.fromCharCode(65 + i)+'.png';
     image.style.width='1.5rem';
     div.style.padding='0.8rem';
     div.style.border = '1px solid black';
@@ -64,7 +64,7 @@ for (let i = 13; i < 26; i++) {
   for (let i = 13; i < 26; i++) {
     const div = document.createElement('div');
     const image=document.createElement('img');
-    image.src='Images/'+String.fromCharCode(65 + i)+'.png';
+    image.src='/Images/'+String.fromCharCode(65 + i)+'.png';
     image.style.width='1.5rem';
     div.style.padding='0.8rem';
     div.style.border = '1px solid black';
@@ -96,9 +96,6 @@ for (let i=0;i<11;i++)
 {
     const div=document.createElement('input');
     div.style.border = '1px solid black';
-    // div.style.padding='0.8rem';
-    // div.style.width='1.5rem';
-    // div.style.height='1.5rem';
     div.classList.add('media');
     div.id=arr1[i];
     div.addEventListener('input',checkValue);
@@ -122,7 +119,7 @@ for (let i=0;i<11;i++)
         div.style.backgroundColor='black';
     }
     const tempimg=document.createElement('img');
-    tempimg.src='Images/'+arr1[i]+'.png';
+    tempimg.src='/Images/'+arr1[i]+'.png';
     tempimg.classList.add('tempimg');
     div.appendChild(tempimg);
     line2.appendChild(div);
@@ -168,7 +165,7 @@ for (let i=0;i<11;i++)
     }
 
     const tempimg=document.createElement('img');
-    tempimg.src='Images/'+arr2[i]+'.png';
+    tempimg.src='/Images/'+arr2[i]+'.png';
     tempimg.style.width='1.5rem';
     div.appendChild(tempimg);
     line5.appendChild(div);
@@ -221,7 +218,6 @@ question.appendChild(line8);
 
 
 
-
 function checkValue()
 {
     const input=this;
@@ -233,9 +229,16 @@ function checkValue()
     let classname=input.id;
     console.log(classname);
     if (userInput===classname)
-    {input.classList.add('correct');}
+    {
+        input.classList.remove('wrong');
+        input.classList.add('correct');
+    }
+
     else{
+
         input.classList.remove('correct');
+        input.classList.remove('wrong');
+        input.classList.add('wrong');
     }
 
 
@@ -248,14 +251,23 @@ function checkValue()
     }
    }
 
+
 }
 
 function prevBox(event) {
     const currentInput = event.target;
+    if (event.keyCode===8)
+    {
+    currentInput.classList.remove('wrong');
+    currentInput.classList.remove('correct');
+
+    }
   
     if (event.keyCode === 8 && currentInput.value.length === 0) {
       const previousInput = currentInput.previousElementSibling;
-  
+      previousInput.classList.remove('wrong');
+      previousInput.classList.remove('correct');
+
       if (previousInput && previousInput.tagName === 'INPUT') {
         previousInput.focus();
       }
