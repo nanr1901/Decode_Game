@@ -166,7 +166,7 @@ for (let i=0;i<11;i++)
 
     const tempimg=document.createElement('img');
     tempimg.src='Images/'+arr2[i]+'.png';
-    tempimg.style.width='1.5rem';
+    tempimg.classList.add('tempimg');
     div.appendChild(tempimg);
     line5.appendChild(div);
 }
@@ -210,7 +210,7 @@ for (let i=0;i<11;i++)
     }
     const tempimg=document.createElement('img');
     tempimg.src='Images/'+arr3[i]+'.png';
-    tempimg.style.width='1.5rem';
+    tempimg.classList.add('tempimg');
     div.appendChild(tempimg);
     line8.appendChild(div);
 }
