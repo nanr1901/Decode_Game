@@ -35,7 +35,7 @@ for (let i = 0; i < 13; i++) {
 for (let i = 0; i < 13; i++) {
     const div = document.createElement('div');
     const image=document.createElement('img');
-    image.src='/Images/'+String.fromCharCode(65 + i)+'.png';
+    image.src='Images/'+String.fromCharCode(65 + i)+'.png';
     image.style.width='1.5rem';
     div.style.padding='0.8rem';
     div.style.border = '1px solid black';
@@ -64,7 +64,7 @@ for (let i = 13; i < 26; i++) {
   for (let i = 13; i < 26; i++) {
     const div = document.createElement('div');
     const image=document.createElement('img');
-    image.src='/Images/'+String.fromCharCode(65 + i)+'.png';
+    image.src='Images/'+String.fromCharCode(65 + i)+'.png';
     image.style.width='1.5rem';
     div.style.padding='0.8rem';
     div.style.border = '1px solid black';
@@ -119,7 +119,7 @@ for (let i=0;i<11;i++)
         div.style.backgroundColor='black';
     }
     const tempimg=document.createElement('img');
-    tempimg.src='/Images/'+arr1[i]+'.png';
+    tempimg.src='Images/'+arr1[i]+'.png';
     tempimg.classList.add('tempimg');
     div.appendChild(tempimg);
     line2.appendChild(div);
@@ -165,7 +165,7 @@ for (let i=0;i<11;i++)
     }
 
     const tempimg=document.createElement('img');
-    tempimg.src='/Images/'+arr2[i]+'.png';
+    tempimg.src='Images/'+arr2[i]+'.png';
     tempimg.style.width='1.5rem';
     div.appendChild(tempimg);
     line5.appendChild(div);
