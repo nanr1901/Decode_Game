@@ -140,6 +140,9 @@ padding:0.8rem;
     .media{
         width:0.55rem;
     }
+    input{
+    font-size: 0.9rem;
+    }
 
       
 }
